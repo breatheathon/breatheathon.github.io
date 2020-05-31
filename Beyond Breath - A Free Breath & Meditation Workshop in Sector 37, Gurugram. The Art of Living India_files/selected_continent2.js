@@ -1,0 +1,1 @@
+ var selectedContinent = 2;

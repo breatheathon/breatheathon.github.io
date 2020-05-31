@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title></title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><style media="screen">body { width: 100%; height: 80px; overflow:hidden; display: flex; align-items: center; justify-content: center; margin: 0; padding: 0; }
+	.trilyo-floating-button {
+		width: 60px; height: 60px; border-radius: 50%; cursor: pointer;
+		color : white;
+		font-weight: normal;
+	 -webkit-transition: all .2s linear; transition: all .2s linear; position: relative; background: #4E00AD; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 10px rgba(0,0,0,0.3)}
+	 .trilyo-floating-button img{
+		 width: 30px;
+		 height: 30px;
+	 }
+	 .trilyo-floating-button img.custom{
+		 width: auto;
+		 height: auto;
+	 }
+	#badge{
+		display:none;position:fixed;background:#F57F23;width:20px;height:20px;border-radius:10px;top:5px;margin-left:15px;z-index:999;text-align:center;color:#FFF;font-size:12px;line-height:20px;
+	}
+	@media (max-width:40px) {
+		.trilyo-floating-button {
+				background : transparent !important;
+				box-shadow: none !important;
+				display: none;
+
+		}
+
+	}</style></head><body><div id="badge" style="display: block; background: rgb(245, 127, 35) none repeat scroll 0% 0%;">1</div><div class="trilyo-floating-button" id="trilyo-button" style="background-color: rgb(255, 174, 0);"><img src="button_v2_data/trilyo_chat.svg" alt=""></div><script type="text/javascript">// alert(document.location.search);
+	function getQueryParams(paramName) {
+		qs = document.location.search;
+		qs = qs.split('+').join(' ');
+
+		var params = {},
+				tokens,
+				re = /[?&]?([^=]+)=([^&]*)/g;
+
+		while (tokens = re.exec(qs)) {
+				params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+		}
+		// console.log(params);
+
+		return params[paramName];
+	}
+	var messageCountKey = "messageCount-" + getQueryParams("entity");
+	// alert(getQueryParams("brandColor"));
+
+
+
+	function storageAvailable(type) {
+		try {
+			var storage = window[type],
+			x = '__storage_test__';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			return true;
+		}
+		catch(e) {
+			return false;
+		}
+	}
+
+	function updateBadge(count) {
+		var badge = document.getElementById("badge");
+		if (count == 0) {
+			badge.style.display = "none";
+		} else {
+			badge.style.display = "block";
+			badge.innerHTML     =  count;
+		}
+	}
+	var count = (storageAvailable("localStorage") && localStorage.getItem(messageCountKey)) ? localStorage.getItem(messageCountKey) : 0;
+	var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+	var eventer = window[eventMethod];
+	var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+	eventer(messageEvent, function (e) {
+		// if (e.origin == trilyourl || e.origin == trilyourl1){
+		if (e.data instanceof Object) {
+			if (e.data.type == "general") {
+				count++;
+				if (storageAvailable("localStorage")) {
+					localStorage.setItem(messageCountKey, count);
+				}
+				updateBadge(count);
+			}
+		}
+		// }
+
+
+	});
+	if (count > 0) {
+		updateBadge(count);
+	}
+
+	function storageAvailable(type) {
+		try {
+			var storage = window[type],
+			x = '__storage_test__';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			return true;
+		}
+		catch(e) {
+			return false;
+		}
+	}
+
+	function handleButtonClick(e) {
+		parent.postMessage('open','*');
+		count = 0;
+		updateBadge(0);
+		if (storageAvailable("localStorage")) {
+			localStorage.setItem(messageCountKey, 0);
+		}
+
+	}
+	document.getElementById('trilyo-button').addEventListener('click', handleButtonClick, false);
+
+	var brandColor = getQueryParams("brandColor");
+
+	if (brandColor) {
+		document.getElementById("trilyo-button").style.backgroundColor = brandColor;
+		// alert(document.getElementById("trilyo-button").style.backgroundColor);
+	}
+
+	var badge_color = getQueryParams("badge_color");
+	if (badge_color) {
+		document.getElementById("badge").style.background = badge_color;
+	}
+
+	if (getQueryParams("oval")) {
+		document.querySelector(".trilyo-floating-button").style.width = "90px";
+	}
+	var override = getQueryParams("override")
+	if (override) {
+		if (override.substring(0,4) == "text") {
+				document.querySelector(".trilyo-floating-button").innerHTML = override.substring(5);
+		}
+		if (override.substring(0,3) == "img") {
+				document.querySelector(".trilyo-floating-button").innerHTML = "<img class='custom' src='" + override.substring(4) + "' alt=''/>"
+				document.querySelector(".trilyo-floating-button").style.background = "none";
+				document.querySelector(".trilyo-floating-button").style.boxShadow = "0px -8px 3px rgba(0,0,0,0.3)";
+
+		}
+
+	}</script></body></html>

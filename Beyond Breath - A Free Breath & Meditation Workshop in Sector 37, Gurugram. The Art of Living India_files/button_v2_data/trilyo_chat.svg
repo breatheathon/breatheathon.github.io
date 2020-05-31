@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.338 25.154">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #707070;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Group_4" data-name="Group 4" transform="translate(-0.024 -0.054)">
+    <path id="Line_Copy_6" data-name="Line Copy 6" class="cls-1" d="M25.06,18.507c-.558.913-3.789.2-4.382,1.938-2.816,8.272-3.414.447-5.3.5-4.989.139-10.287-.482-11.735-1.557C.893,17.347-1.381,9.941,1,6.184S18.668-1.485,23.057.564,27.1,15.18,25.06,18.507Z" transform="matrix(0.999, 0.035, -0.035, 0.999, 0.871, 0.054)"/>
+    <path id="Line" class="cls-2" d="M0,1.2,12.164,0" transform="translate(7.486 7.364)"/>
+    <path id="Line-2" data-name="Line" class="cls-2" d="M0,.308H14.056" transform="translate(6.569 11.584)"/>
+    <path id="Line-3" data-name="Line" class="cls-2" d="M0,.925,12.528,0" transform="translate(8.403 15.008)"/>
+  </g>
+</svg>

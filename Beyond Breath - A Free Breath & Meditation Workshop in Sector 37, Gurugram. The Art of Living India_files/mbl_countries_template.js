@@ -1,0 +1,1 @@
+var mbl_countries_rows_template = '<% _.each( continents, function( continent ){ %>  <% _.each( continent.countries, function( country ){ %>     <a href="<%= country[1] %>"> <%=  country[0] %> (<%=  country[2] %>) </a>  <% }); %><% }); %>'

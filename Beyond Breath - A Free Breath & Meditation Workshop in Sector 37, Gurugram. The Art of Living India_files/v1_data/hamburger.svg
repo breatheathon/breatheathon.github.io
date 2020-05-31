@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.414 13.837">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(-0.193 -0.175)">
+    <path id="Line" class="cls-1" d="M0,.925H17.914" transform="translate(0.943)"/>
+    <path id="Line_Copy" data-name="Line Copy" class="cls-1" d="M0,.925H17.914" transform="translate(0.943 6.168)"/>
+    <path id="Line_Copy_2" data-name="Line Copy 2" class="cls-1" d="M0,.925H17.914" transform="translate(0.943 12.337)"/>
+  </g>
+</svg>

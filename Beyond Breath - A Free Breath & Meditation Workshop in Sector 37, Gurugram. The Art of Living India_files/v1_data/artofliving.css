@@ -1,0 +1,61 @@
+.trilyo-chat-container header .header-content{background: #ffae00;background-image: url('https://content.trilyo.com/img/trilyo_header.png')}
+.trilyo-chat-body {
+  
+  -webkit-transition: all .7s linear; transition: all .7s linear;
+}
+.trilyo-chat-body.started {
+  <%CHAT_TOP_ACTIVE%>
+}
+.trilyo-chat-container header .header-content {
+  
+}
+.trilyo-chat-container header .header-content.started {
+  <%HEADER_STYLIING_ACTIVE%>
+}
+
+.agent {
+  color : #ffae00;
+}
+.trilyo-user-chat > div.chat {background : #ffae00}
+.trilyo-user-chat div.chat:first-child::before { border-color: #ffae00 transparent transparent transparent }
+.primary-btn { background-color: #ffae00}
+.card-inf h2 { color : #ffae00 }
+.card-inf p { color : #000; }
+.sub-button-h button { color : #ffae00 }
+.footer-icons button.menu { background-color: #ffae00}
+.header-btn { background: #fff;color : #ffae00;}
+.owl-next:before {color : #ffae00}
+.owl-prev:before {color : #ffae00}
+.deal-box-holder button:hover {background: #fff;color : #ffae00;}
+.trilyo-floating-button {background: #ffae00;}
+.badge {background: yellow;}
+.quick-reply-holder button {border-color : #ffae00;color:#ffae00}
+#trilyo_persitent_menu .item {border-color : #ffae00;color:#ffae00 !important}
+div.quick-option > div { color:#ffae00 !important}
+div.quick-option > div .icon { background: #ffae00 !important}
+.carousel-header {color : #ffae00 !important}
+.form h4 {color : #ffae00 !important}
+.primary-action { background: #ffae00 !important; border: #ffae00 !important}
+.form .cancel-action { color: #ffae00 !important; border-color: #ffae00 !important}
+.q-r button:hover {background: #ffae00 !important;color:#fff;}
+.cls-1 {fill: #ffae00 !important; stroke:#ffae00 !important }
+.newsletter .content, .newsletter .content input[type="text"], .newsletter .input-h{ border-color : #ffae00 !important; }
+.newsletter .content .btn-1 {background: #ffae00 !important; }
+/* .newsletter .content button { background:  #ffae00 !important;} */
+.newsletter .content h1 { color : #ffae00 !important; }
+.ui-datepicker .ui-state-default.ui-state-active { background: #ffae00 !important; }
+.activPill { background: #ffae00 !important;}
+.ui-autocomplete .ui-state-active { background: #ffae00 !important; }
+.fullpage-header h2 {color: #ffae00 !important;}
+.header-notice-text a {background: #ffae00 !important; }
+html {background-color: #ffae00 !important;background-image: url('https://content.trilyo.com/img/trilyo_header.png')}
+.language-menu ul li.active { color: #ffae00 !important; }
+.list-item button,.submit-btn {background: #ffae00 !important;}
+.hot-deal-h svg polygon { fill: #4E00AD !important; }
+.ngrs-range-slider .ngrs-handle { background: #ffae00 !important;}
+.menuIcon {color: #ffae00 !important;}
+.calpicker-top-left, .calpicker-top-right {border-top-color: #ffae00 !important;}
+.calpicker-panel > ul > li.picked, .calpicker-panel > ul > li.picked:hover {color: #ffae00 !important;}
+.hot-deal-h svg polygon { fill : #ffae00 !important; }
+.language-menu .searchbox:active, .language-menu .searchbox:focus { border-color: #ffae00 !important; }
+.form-smallbutton {background-color: #ffae00 !important;}

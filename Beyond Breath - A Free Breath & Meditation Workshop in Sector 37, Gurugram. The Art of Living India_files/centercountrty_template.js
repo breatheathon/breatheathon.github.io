@@ -1,0 +1,1 @@
+var center_rows_template = ' <% _.each( continents, function( continent ){ %>    <% _.each( continent.countries, function( country ){ %> <li > <a href="<%= country[1] %>"> <%=  country[0] %> </a> </li>    <% }); %>    <% }); %>'
