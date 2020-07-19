@@ -55,7 +55,7 @@
       font-family: Montserrat;
       color: #fff;
       font-style: normal;
-      padding-top: 50px;
+      padding-top: 0px;
       padding-left: 74px;
     }
 
@@ -2354,11 +2354,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                       <div class="crousel-introtalk">
                                         <br>
                                         <p class="bold-text"><span>Join The World’s First</span></p><br>
-                                        <p class="bold-text" style="font-size: 19px;">"<span>Breathe - A – Thon</span>"</p><br>
-                                        <p style="font-size: 16px;">World’s No.1 Breathing Technique.</p>
+                                        <p class="bold-text"> "<span>Breathe - A – Thon</span>"
+                                        </p><br>
+                                        <p>Breathe Healthy. Build Immunity</p>
                                         <div class="yellow-button-wrapper">
-                                          <button data-toggle="modal" data-target="#exampleModalCenter">REGISTER
-                                            ME</button>
+                                          <a href="javascript.void(0)" class="btn" data-toggle="modal"
+                                            data-target="#exampleModalCenter">REGISTER ME</a>
                                         </div>
                                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                                           aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -2366,38 +2367,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             style="z-index: 1100;">
                                             <div class="modal-content">
                                               <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Details</h5>
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Online Meditation &
+                                                  Breath Workshop</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                   aria-label="Close">
                                                   <span aria-hidden="true">&times;</span>
                                                 </button>
                                               </div>
                                               <div class="modal-body">
-                                                <form name="submit-to-google-sheet">
+                                                <form id="contact-form" name="submit-to-google-sheet">
                                                   <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                       <div class="form-group">
-                                                        <label for="form_name">Firstname *</label>
+                                                        <label for="form_name">Name *</label>
                                                         <input id="form_name" type="text" name="name"
-                                                          class="form-control"
-                                                          placeholder="Please enter your firstname *"
-                                                          required="required" data-error="Firstname is required.">
-                                                        <div class="help-block with-errors"></div>
-                                                      </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                      <div class="form-group">
-                                                        <label for="form_lastname">Lastname *</label>
-                                                        <input id="form_lastname" type="text" name="surname"
-                                                          class="form-control"
-                                                          placeholder="Please enter your lastname *" required="required"
-                                                          data-error="Lastname is required.">
+                                                          class="form-control" placeholder="Please enter your name *"
+                                                          required="required" data-error="Name is required.">
                                                         <div class="help-block with-errors"></div>
                                                       </div>
                                                     </div>
                                                   </div>
                                                   <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
+                                                      <div class="form-group">
+                                                        <label for="form_contact">Contact *</label>
+                                                        <input id="form_contact" type="text" name="contact"
+                                                          class="form-control" pattern=".{10,}"
+                                                          placeholder="Please enter your phone number with country code *"
+                                                          required="required" data-error="Contact is required.">
+                                                        <div class="help-block with-errors"></div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="row">
+                                                    <div class="col-md-12">
                                                       <div class="form-group">
                                                         <label for="form_email">Email *</label>
                                                         <input id="form_email" type="email" name="email"
@@ -2407,25 +2410,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                       </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                      <div class="form-group">
-                                                        <label for="form_need">Please specify your need *</label>
-                                                        <select id="form_need" name="need" class="form-control"
-                                                          required="required" data-error="Please specify your need.">
-                                                          <option value=""></option>
-                                                          <option value="Request quotation">Request quotation</option>
-                                                          <option value="Request order status">Request order status
-                                                          </option>
-                                                          <option value="Request copy of an invoice">Request copy of an
-                                                            invoice</option>
-                                                          <option value="Other">Other</option>
-                                                        </select>
-                                                        <div class="help-block with-errors"></div>
-                                                      </div>
                                                     </div>
                                                   </div>
+                                                  <br>
+                                                  <br>
                                                   <div class="row">
-                                                    <div class="col-md-12">
-                                                      <button type="submit" class="btn btn-sm btn-primary">Send</button>
+                                                    <div class="col-md-12 text-center">
+                                                      <button type="submit" class="btn btn-primary">Request a call
+                                                        back</button>
                                                     </div>
                                                   </div>
                                                 </form>
@@ -2439,10 +2431,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                                                 form.addEventListener('submit', e => {
                                                   e.preventDefault()
+                                                  
                                                   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                                    .then(response => 
-                                                    {console.log('Success!', response)
-                                                    $('#exampleModalCenter').modal('toggle');}
+                                                    .then(response => {
+                                                      console.log('Success!', response)
+                                                      $("#contact-form").trigger("reset");
+                                                      
+                                                      $('#exampleModalCenter').modal('toggle');
+                                                    }
                                                     )
                                                     .catch(error => console.error('Error!', error.message))
                                                 })
@@ -2512,7 +2508,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             <div class="html-component  ">
                                               <div class="field-item even">
                                                 <div class="breath-sec-first">
-                                                  <h2>World’s <span class="tile">No.1</span> <br> Breathing Technique.</h2>
+                                                  <h2>World’s <span class="tile">No.1</span> <br> Breathing Technique.
+                                                  </h2>
                                                 </div>
                                               </div>
                                             </div>
@@ -2546,21 +2543,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                             Levels</u> -->
                                                           .</strong></p>
                                                     </div>
-                                                    <div><span>6.</span>
+                                                    <div><span>5.</span>
                                                       <p><strong>Heightened Awareness, Concentration and Focus.</strong>
                                                       </p>
                                                     </div>
-                                                    <div><span>7.</span>
+                                                    <div><span>6.</span>
                                                       <p><strong>Improved Quality of Sleep and Lung Capacity.</strong>
                                                       </p>
                                                     </div>
-                                                    <div><span>8.</span>
+                                                    <div><span>7.</span>
                                                       <p><strong>Refined Emotions.</strong></p>
                                                     </div>
-                                                    <div><span>9.</span>
+                                                    <div><span>8.</span>
                                                       <p><strong>Higher Optimism, Self-Esteem and Energy.</strong></p>
                                                     </div>
-                                                    <div><span style="padding:0;">10.</span>
+                                                    <div><span>9.</span>
                                                       <p><strong>Higher Life Satisfaction & Quality of Life.</strong>
                                                       </p>
                                                     </div>
@@ -2640,7 +2637,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             <div class="html-component">
                                               <div class="field-item even">
                                                 <div class="breath-sec-first">
-                                                  <h2>World’s No.1 Breathing Technique <span class="tile">All</span> <br> of these.</h2>
+                                                  <h2>World’s No.1 Breathing Technique <span class="tile">All</span>
+                                                    <br> of these.</h2>
                                                 </div>
                                               </div>
                                             </div>
@@ -2706,23 +2704,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                             Levels</u> -->
                                                           .</strong></p>
                                                     </div>
-                                                    <div><span>6.</span>
+                                                    <div><span>5.</span>
                                                       <p><strong>Heightened Awareness, Concentration and Focus.</strong>
                                                       </p>
                                                     </div>
-                                                    <div><span>7.</span>
+                                                    <div><span>6.</span>
                                                       <p><strong>Improved Quality of Sleep and Lung Capacity.</strong>
                                                       </p>
                                                     </div>
-                                                    <div><span>8.</span>
+                                                    <div><span>7.</span>
                                                       <p><strong>Refined Emotions.</strong>&nbsp;
                                                         &nbsp;&nbsp;&nbsp;
                                                         &nbsp;&nbsp;</p>
                                                     </div>
-                                                    <div><span>9.</span>
+                                                    <div><span>8.</span>
                                                       <p><strong>Higher Optimism, Self-Esteem and Energy.</strong></p>
                                                     </div>
-                                                    <div><span style="padding:0;">10.</span>
+                                                    <div><span>9.</span>
                                                       <p><strong>Higher Life Satisfaction & Quality of Life.</strong>
                                                       </p>
                                                     </div>
@@ -2781,7 +2779,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="inner-holder">
                       <div
                         style=" height:527px; background-color: blueviolet;background-size: cover; background-position: center center;"
-                        class="row-inner-wrapper picturefill-background" row_height="height:527px;">
+                        class="row-inner-wrapper picturefill-background" row_height="height:400px;">
                         <div class="row-image-child"></div>
                         <div class="row-inner manage-your-breath-section">
                           <div id="admin-element-466366"
@@ -2791,15 +2789,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 class="div_html_component div_list div_1 html_component_1_of_1 page-element element-html_component  single-of-type first-of-type last-of-type">
                                 <div class="html-component  ">
                                   <div class="field-item even">
-                                    <p class="change" style="font-size: 20px; padding-left: 0;"><b>Learn Sudarshan
+                                    <p class="change" style="padding-top: 0; font-size: 20px; padding-left: 0;"><b>Learn
+                                        Sudarshan
                                         Kriya</b></p>
-                                    <p style="font-size: 20px; width: 50%;"><b>
-                                      In the Online Meditation and Breath Workshop</b></p>
+                                    <p style="font-size: 20px; width: 50%; padding-top: 0;"><b>
+                                        In the Online Meditation and Breath Workshop</b></p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
+                        </div>
+                        <div class="table-responsive" style="margin-left: 20%; max-width: 60%;">
+                          <table class="table table-bordered text-center" style="border: 1px solid white;">
+                            <thead>
+                              <tr>
+                                <th colspan="2" style="text-align: center; color: white;">July 30 to 2nd
+                                  August
+                                </th>
+
+                              </tr>
+                            </thead>
+                            <tbody style="color: white;">
+                              <tr>
+                                <td>Batch 1<br><small>6.30am - 8.30am</small></td>
+                                <td>Batch 2<br><small>6.30pm - 8.30pm</small></td>
+
+                              </tr>
+                              <tr>
+                                <td><button class="btn btn-sm"
+                                    style="background: #f3c84f !important; color: white; border-style: none; border-radius: 7px; font:white;"><a
+                                      target="_blank" href="https://aolt.in/487498"
+                                      style="color: white;">REGISTER</a></button>
+                                </td>
+                                <td><button class="btn btn-sm"
+                                    style="background: #f3c84f !important; border-style: none; border-radius: 7px; font:white;"><a
+                                      target="_blank" style="color: white;"
+                                      href="https://aolt.in/487499">REGISTER</a></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                            <!-- <thead>
+                              <tr>
+                                <th colspan="2" style="text-align: center; color: white;">July 2 to 5
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Batch 1<br><small>6.30am - 8.30am</small></td>
+                                <td>Batch 2<br><small>6.30pm - 8.30pm</small></td>
+                              </tr>
+                              <tr>
+                                <td><button class="btn btn-sm"
+                                    style="background: #f3c84f !important; border-style: none; border-radius: 7px; font:white;"><a
+                                      target="_blank"
+                                      href="https://www.artofliving.online/registration.php?event_id=479086">REGISTER</a></button>
+                                </td>
+                                <td><button class="btn btn-sm"
+                                    style="background: #f3c84f !important; border-style: none; border-radius: 7px; font:white;"><a
+                                      target="_blank"
+                                      href="https://www.artofliving.online/registration.php?event_id=479087">REGISTER</a></button>
+                                </td>
+                              </tr>
+                            </tbody> -->
+                          </table>
                         </div>
                         <div class="clearfix"> </div>
                       </div>
@@ -2919,9 +2973,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                               data-delta="1" alt="" title=""
                                               src="/sites/www.artofliving.org/files/wysiwyg_imageupload/03124a00-breathea_03c03c000000000000001.png"
                                               width="120" height="120" /></noscript></span>
-                                        <p class="text-p-breath-section"><strong>Improves Ability to Manage Challenging Situations.
-                                          <!-- <u style="text-decoration: underline;"></u> -->
-                                        </strong>
+                                        <p class="text-p-breath-section"><strong>Improves Ability to Manage Challenging
+                                            Situations.
+                                            <!-- <u style="text-decoration: underline;"></u> -->
+                                          </strong>
                                         </p>
                                       </div>
                                     </div>
@@ -3040,9 +3095,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                               src="/sites/www.artofliving.org/files/wysiwyg_imageupload/03124a00-breathea_03c03c000000000000001.png"
                                               width="120" height="120" /></noscript></span>
                                         <p class="text-p-breath-section"><strong>
-                                          Improves Ability to Manage Challenging Situations
+                                            Improves Ability to Manage Challenging Situations
                                             <!-- <u style="text-decoration: underline;">2X, 3X, or even 4X</u> -->
-                                              .</strong>
+                                            .</strong>
                                         </p>
                                       </div>
                                     </div>
@@ -4133,7 +4188,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                           <ul style="display: none;"></ul>
                                         </div>
                                         <div class="table-responsive">
-                                          <table class="table table-bordered text-center" style="border: 1px solid white;">
+                                          <table class="table table-bordered text-center"
+                                            style="border: 1px solid white;">
                                             <thead>
                                               <tr>
                                                 <th colspan="2" style="text-align: center; color: white;">July 30 to 2nd
@@ -4151,13 +4207,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                               <tr>
                                                 <td><button class="btn btn-sm"
                                                     style="background: #f3c84f !important; color: white; border-style: none; border-radius: 7px; font:white;"><a
-                                                      target="_blank"
-                                                      href="https://aolt.in/487498" style="color: white;">REGISTER</a></button>
+                                                      target="_blank" href="https://aolt.in/487498"
+                                                      style="color: white;">REGISTER</a></button>
                                                 </td>
                                                 <td><button class="btn btn-sm"
                                                     style="background: #f3c84f !important; border-style: none; border-radius: 7px; font:white;"><a
                                                       target="_blank" style="color: white;"
-                                                      href="https://www.artofliving.online/registration.php?event_id=478231">REGISTER</a></button>
+                                                      href="https://aolt.in/487499">REGISTER</a></button>
                                                 </td>
                                               </tr>
                                             </tbody>
